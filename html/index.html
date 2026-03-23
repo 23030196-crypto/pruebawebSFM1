@@ -1,213 +1,312 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Festival Internacional de Cine</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Festival Internacional de Cine</title>
 
-<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        <script src="/javascript/menu.js"></script>
+        <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
-.hero{
-height:100vh;
-background-image:url("../img/CINETECA_by_Paul_Rivera_002.webp");
-background-size:cover;
-background-position:center;
-}
-</style>
-</head>
+        <style>
+        .hero{
+        height:100vh;
+        background-image:url("../img/CINETECA_by_Paul_Rivera_002.webp");
+        background-size:cover;
+        background-position:center;
+        }
+        </style>
+    </head>
 
-<body class="bg-gray-100">
 
-<!-- NAVBAR -->
-<header class="bg-white text-black fixed w-full z-50">
-<div class="max-w-7xl mx-auto flex justify-between items-center p-4">
-<div class="text-2xl font-bold">
-    <img src="../img/logo.jpeg" width="140">
 
+    <body class="bg-gray-100">
+
+        <!-- NAVBAR -->
+<header class="bg-white text-black fixed w-full z-50 shadow-md">
+    <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+        <div class="flex-shrink-0">
+            <a href="index.html">
+                <img src="../img/logo.jpeg" width="140" alt="Logo Stories From Mexico">
+            </a>
+        </div>
+
+        <button id="menu-btn" class="md:hidden p-2 focus:outline-none hover:bg-gray-100 rounded-lg">
+            <svg class="w-8 h-8 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wide">
+            <a href="index.html" class="hover:text-green-500 transition">Inicio</a>
+            <a href="peliculas.html" class="hover:text-green-500 transition">Películas</a>
+            
+            <div class="relative group">
+                <button class="flex items-center hover:text-green-500 transition focus:outline-none">
+                    Información 
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-48 shadow-xl rounded-b-lg">
+                    <a href="#about-us" class="block px-4 py-2 hover:bg-gray-100">Sobre Nosotros</a>
+                    <a href="#faq" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+                    <div class="relative group/sub">
+                        <button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100 text-left">
+                            Ediciones <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+                        </button>
+                        <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">2025</a>
+                            <a href="#" class="block px-4 py-2 hover:bg-gray-100">2024</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#boletos" class="bg-green-500 text-black px-5 py-2 rounded-full font-bold hover:bg-green-400 transition shadow-sm">
+                Comprar Boletos
+            </a>
+        </nav>
     </div>
-<nav class="space-x-6 hidden md:block">
-<a href="#" class="hover:text-green-400">Inicio</a>
-<a href="#peliculas" class="hover:text-green-400">Películas</a>
-<a href="#proximamente" class="hover:text-green-400">Próximamente</a>
-<a href="#boletos" class="hover:text-green-400">Boletos</a>
-<a href="#noticias" class="hover:text-green-400">Noticias</a>
-<a href="#patrocinadores" class="hover:text-green-400">Patrocinadores</a>
-<a href="#about us" class="hover:text-green-400">About us</a>
-<a href="#faq" class="hover:text-green-400">FAQ</a>
-</nav>
-</div>
+
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0">
+        <nav class="flex flex-col p-6 space-y-5">
+            <a href="index.html" class="text-lg font-medium border-b border-gray-50 pb-2">Inicio</a>
+            <a href="peliculas.html" class="text-lg font-medium border-b border-gray-50 pb-2">Películas</a>
+            
+            <div>
+                <button onclick="toggleElement('mobile-info')" class="flex justify-between w-full text-lg font-medium">
+                    Información
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div id="mobile-info" class="hidden flex flex-col pl-4 mt-3 space-y-3 border-l-2 border-green-500 bg-gray-50 p-3 rounded">
+                    <a href="#about-us" class="text-gray-700">Sobre Nosotros</a>
+                    <a href="#faq" class="text-gray-700">FAQ</a>
+                    <div>
+                        <button onclick="toggleElement('mobile-ediciones')" class="flex justify-between w-full text-gray-700 italic">
+                            Ediciones pasadas
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                        <div id="mobile-ediciones" class="hidden pl-4 mt-2 space-y-2 text-sm text-gray-500">
+                            <a href="#" class="block">Edición 2025</a>
+                            <a href="#" class="block">Edición 2024</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#boletos" class="bg-green-500 text-center py-3 rounded-lg font-bold text-black shadow-md">
+                Comprar Boletos
+            </a>
+        </nav>
+    </div>
 </header>
 
-<!-- HERO BANNER -->
-<section class="hero flex items-center justify-center text-white text-center">
-<div class="bg-black bg-opacity-60 p-10 rounded">
-<h1 class="text-5xl font-bold mb-4">Festival Internacional de Cine 2026</h1>
-<p class="text-xl mb-6">Descubre las mejores películas del año</p>
-<a href="#boletos" class="bg-green-500 px-6 py-3 text-black font-bold rounded hover:bg-green-400">Comprar Boletos</a>
-</div>
-</section>
+        <!-- HERO BANNER -->
+        <section class="hero flex items-center justify-center text-white text-center">
+            <div class="bg-black bg-opacity-60 p-10 rounded">
+                <h1 class="text-5xl font-bold mb-4">Festival Internacional de Cine 2026</h1>
+                <p class="text-xl mb-6">Descubre las mejores películas del año</p>
+                <a href="#boletos" class="bg-green-500 px-6 py-3 text-black font-bold rounded hover:bg-green-400">Comprar Boletos</a>
+            </div>
+        </section>
 
-<!-- About us -->
-<section id="About us" class="bg-white-500 py-16 px-6">
-<div class="max-w-4xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8">About us</h2>
-</div>
+        <!-- About us -->
+        <section id="about-us" class="bg-white py-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    
+                    <div>
+                        <h2 class="text-4xl font-extrabold mb-6 text-gray-900 border-l-8 border-green-500 pl-4">
+                            Who we Are?
+                        </h2>
+                        <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+                            <strong>Stories From Mexico</strong> nació con el firme propósito de ser la ventana principal del cine mexicano contemporáneo en el corazón de Europa. Desde nuestra base en Dublín, celebramos la riqueza visual, las narrativas profundas y la diversidad de voces que definen a México hoy.
+                        </p>
+                        <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                            Nuestra colaboración con <strong>Embassy of Mexico</strong> nos permite crear un espacio de intercambio cultural único, donde cineastas emergentes y directores consagrados convergen para compartir historias que trascienden fronteras.
+                        </p>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg border-t-4 border-red-600 shadow-sm">
+                                <h4 class="font-bold text-red-600">Misión</h4>
+                                <p class="text-sm">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quasi tenetur eaque rerum, porro perferendis optio nisi corrupti quos officia esse eius cumque nulla beatae. Provident impedit explicabo animi totam veniam.</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg border-t-4 border-green-600 shadow-sm">
+                                <h4 class="font-bold text-green-600">Visión</h4>
+                                <p class="text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur, consectetur sit dicta deleniti eligendi quis fuga possimus? Recusandae ullam nisi maiores corporis ratione beatae enim facere placeat cupiditate. Suscipit, culpa.</p>
+                            </div>
+                        </div>
+                    </div>
 
-</section>
+                    <div class="relative">
+                        <div class="absolute inset-0 bg-green-500 rounded-2xl transform rotate-3 scale-105 opacity-20"></div>
+                        <img src="https://www.meganoticias.mx/uploads/noticias/cuerpo/dia-de-muertos-origen-y-evolucion-de-una-tradicion-inmortal-176159753111.jpg" 
+                            alt="Cine Mexicano en Dublín" 
+                            class="relative rounded-2xl shadow-2xl object-cover h-[450px] w-full">
+                        
+                        <div class="absolute -bottom-6 -left-6 bg-black text-white p-6 rounded-lg shadow-xl hidden lg:block">
+                            <p class="text-3xl font-bold text-green-400">2026</p>
+                            <p class="text-xs uppercase tracking-widest">Edición Especial</p>
+                        </div>
+                    </div>
 
-
-
-
-<!-- ARTICULOS / NOTICIAS -->
-<section id="noticias" class="max-w-7xl mx-auto py-16 px-6">
-<h2 class="text-3xl font-bold mb-8">Noticias del Festival</h2>
-<div class="grid md:grid-cols-3 gap-8">
-
-<div class="bg-white rounded shadow">
-<img src="https://scontent.fcyw4-1.fna.fbcdn.net/v/t39.30808-6/625991613_25936014289418639_7106339324651476621_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=N0tvzckWqKsQ7kNvwHmQJxT&_nc_oc=AdkjL9gMcs6OysLFidi4BXpf-0LZBtFAd73Q2IdzDJiQ4Kry1urXUZNq18p0TDKWTLOpQEDfML9NMOZLAc7k-BVU&_nc_zt=23&_nc_ht=scontent.fcyw4-1.fna&_nc_gid=UXg6m1NTY3KaPMhS0mVo_Q&_nc_ss=8&oh=00_AfzmUlPwig_sYB5lQIBDSwJnRQAtrgkryPXQbXJeBzHUxg&oe=69B59CB7" class="w-full h-48 object-cover">
-<div class="p-4">
-<h3 class="font-bold text-xl">Director Invitado</h3>
-<p>Conoce al director especial invitado este año.</p>
-</div>
-</div>
-
-<div class="bg-white rounded shadow">
-<img src="../img/logo.jpeg" class="w-full h-48 object-cover">
-<div class="p-4">
-<h3 class="font-bold text-xl">Premios del Festival</h3>
-<p>Descubre las categorías y premios.</p>
-</div>
-</div>
-
-<div class="bg-white rounded shadow">
-<img src="https://press-files.oscars.org/sites/default/files/2026-03/ACA_2026_KA_4000x2250_v5_PRE.jpg" class="w-full h-48 object-cover">
-<div class="p-4">
-<h3 class="font-bold text-xl">Eventos Especiales</h3>
-<p>Paneles y conferencias con cineastas.</p>
-</div>
-</div>
-
-</div>
-</section>
-
-<!-- PELICULAS DESTACADAS -->
-<section id="peliculas" class="bg-red-600 text-white py-16 px-6">
-<div class="max-w-7xl mx-auto">
-<h2 class="text-3xl font-bold mb-8">Películas Destacadas</h2>
-
-<div class="grid md:grid-cols-4 gap-6">
-
-<div>
-<img src="https://m.media-amazon.com/images/M/MV5BY2IxZDAyNzEtYmNmYi00YWEwLTgwZTUtMzVmYzg5NGUwNzYxXkEyXkFqcGc@._V1_.jpg" class="rounded">
-<p class="mt-2">La novia</p>
-</div>
-
-<div>
-<img src="https://indierocks.sfo3.digitaloceanspaces.com/wp-content/uploads/2025/09/Bad-Bunyy-NFL.jpg" width="100%" class="rounded">
-<p class="mt-2">SUPERBOWL LX HALFTIME SHOW</p>
-</div>
-
-<div>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm8aTlwUQkPqZ5A4pyO2YszjlEGT3SniEpTA&s" class="rounded">
-<p class="mt-2">Cumbres Borrascosas</p>
-</div>
-
-<div>
-<img src="https://m.media-amazon.com/images/M/MV5BMzYzNjEyMTUtOGI2Ny00MzM4LWIxNGYtMmIzNzA0Y2ZkMjkwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="rounded">
-<p class="No manches frida">Future Lights</p>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- PROXIMAMENTE -->
-<section id="proximamente" class="max-w-7xl mx-auto py-16 px-6">
-<h2 class="text-3xl font-bold mb-8">Próximamente</h2>
-
-<div class="grid md:grid-cols-3 gap-8">
-<div class="bg-white shadow rounded p-4">
-<h3 class="font-bold">Noche de Cortometrajes</h3>
-<p>10 Abril 2026</p>
-</div>
-
-<div class="bg-white shadow rounded p-4">
-<h3 class="font-bold">Masterclass de Dirección</h3>
-<p>12 Abril 2026</p>
-</div>
-
-<div class="bg-white shadow rounded p-4">
-<h3 class="font-bold">Premiación</h3>
-<p>15 Abril 2026</p>
-</div>
-</div>
-</section>
+                </div>
+            </div>
+        </section>
 
 
 
-<!-- BOLETOS -->
-<section id="boletos" class="bg-green-500 max-w-7xl mx-auto py-16 px-6 text-center">
-<h2 class="text-3xl font-bold mb-6">Compra Boletos</h2>
-<div class="grid md:grid-cols-3 gap-6">
-    
-    <div class=""><a href="#" class="block bg-black text-white w-full py-3 rounded">Ticketmaster</a></div>
-    <div class=""><a href="#" class="block bg-black text-white w-full px-6 py-3 rounded">Eticket</a></div>
-    <div class=""><a href="#" class="block bg-black text-white w-full px-6 py-3 rounded">Tickets irlandeses</a></div>
-</div>
+
+        <!-- ARTICULOS / NOTICIAS -->
+        <section id="noticias" class="max-w-7xl mx-auto py-16 px-6">
+            <h2 class="text-3xl font-bold mb-8">Noticias del Festival</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+
+                <div class="bg-white rounded shadow">
+                    <img src="https://scontent.fcyw4-1.fna.fbcdn.net/v/t39.30808-6/625991613_25936014289418639_7106339324651476621_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=104&ccb=1-7&_nc_sid=1d70fc&_nc_ohc=iaXTqY5Fpd0Q7kNvwFSAG-B&_nc_oc=AdqoaW54Ne24vR03lUPlpds2zCD9J12qQTEYDianRcYOX0lTHUn4VW8NZ3uWFLM33_7RreFe9mAR9YrF_Y0zvVbp&_nc_zt=23&_nc_ht=scontent.fcyw4-1.fna&_nc_gid=_kCfJp7cBEUROqb8fDC1QQ&_nc_ss=7a32e&oh=00_Afxd01uYldpNCFOl30cMctBaoukb-3efdLUk4kkkt6dJQQ&oe=69C730B7" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl">Director Invitado</h3>
+                        <p>Conoce al director especial invitado este año.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded shadow">
+                    <img src="../img/logo.jpeg" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl">Premios del Festival</h3>
+                        <p>Descubre las categorías y premios.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded shadow">
+                    <img src="https://press-files.oscars.org/sites/default/files/2026-03/ACA_2026_KA_4000x2250_v5_PRE.jpg" class="w-full h-48 object-cover">
+                    <div class="p-4">
+                        <h3 class="font-bold text-xl">Eventos Especiales</h3>
+                        <p>Paneles y conferencias con cineastas.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- PELICULAS DESTACADAS -->
+        <section id="peliculas" class="bg-red-600 text-white py-16 px-6">
+        <div class="max-w-7xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">Películas Destacadas</h2>
+
+        <div class="grid md:grid-cols-4 gap-6">
+
+        <div>
+        <img src="https://m.media-amazon.com/images/M/MV5BY2IxZDAyNzEtYmNmYi00YWEwLTgwZTUtMzVmYzg5NGUwNzYxXkEyXkFqcGc@._V1_.jpg" class="rounded">
+        <p class="mt-2">La novia</p>
+        </div>
+
+        <div>
+        <img src="https://indierocks.sfo3.digitaloceanspaces.com/wp-content/uploads/2025/09/Bad-Bunyy-NFL.jpg" width="100%" class="rounded">
+        <p class="mt-2">SUPERBOWL LX HALFTIME SHOW</p>
+        </div>
+
+        <div>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm8aTlwUQkPqZ5A4pyO2YszjlEGT3SniEpTA&s" class="rounded">
+        <p class="mt-2">Cumbres Borrascosas</p>
+        </div>
+
+        <div>
+        <img src="https://m.media-amazon.com/images/M/MV5BMzYzNjEyMTUtOGI2Ny00MzM4LWIxNGYtMmIzNzA0Y2ZkMjkwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="rounded">
+        <p class="no-manches-frida">Future Lights</p>
+        </div>
+
+        </div>
+        </div>
+        </section>
+
+        <!-- PROXIMAMENTE -->
+        <section id="proximamente" class="max-w-7xl mx-auto py-16 px-6">
+        <h2 class="text-3xl font-bold mb-8">Próximamente</h2>
+
+        <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white shadow rounded p-4">
+        <h3 class="font-bold">Noche de Cortometrajes</h3>
+        <p>10 Abril 2026</p>
+        </div>
+
+        <div class="bg-white shadow rounded p-4">
+        <h3 class="font-bold">Masterclass de Dirección</h3>
+        <p>12 Abril 2026</p>
+        </div>
+
+        <div class="bg-white shadow rounded p-4">
+        <h3 class="font-bold">Premiación</h3>
+        <p>15 Abril 2026</p>
+        </div>
+        </div>
+        </section>
 
 
-</section>
 
-<!-- PATROCINADORES -->
-<section id="patrocinadores" class="max-w-7xl mx-auto py-16 px-6 text-center">
-<h2 class="text-3xl font-bold mb-8">Patrocinadores</h2>
+        <!-- BOLETOS -->
+        <section id="boletos" class="bg-green-500 max-w-7xl mx-auto py-16 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-6">Compra Boletos</h2>
+        <div class="grid md:grid-cols-3 gap-6">
+            
+            <div class=""><a href="#" class="block bg-black text-white w-full py-3 rounded">Ticketmaster</a></div>
+            <div class=""><a href="#" class="block bg-black text-white w-full px-6 py-3 rounded">Eticket</a></div>
+            <div class=""><a href="#" class="block bg-black text-white w-full px-6 py-3 rounded">Tickets irlandeses</a></div>
+        </div>
 
-<div class="grid md:grid-cols-4 gap-6">
-    <div class="bg-white p-6 shadow">Netflix</div>
-    <div class="bg-white p-6 shadow">Canon</div>
-    <div class="bg-white p-6 shadow">IMAX</div>
-    <div class="bg-white p-6 shadow">Adobe</div>
-</div>
-</section>
 
-<!-- FAQ -->
-<section id="faq" class="bg-gray-200 py-16 px-6">
-<div class="max-w-4xl mx-auto">
-<h2 class="text-3xl font-bold mb-8">Preguntas Frecuentes</h2>
+        </section>
 
-<p class="mb-4"><strong>¿Dónde se realiza el festival?</strong><br> EN  Irish Film Institute.</p>
-<p class="mb-4"><strong>¿Se pueden comprar boletos en línea?</strong><br>Sí, mediante las plataformas oficiales.</p>
+        <!-- PATROCINADORES -->
+        <section id="patrocinadores" class="max-w-7xl mx-auto py-16 px-6 text-center">
+        <h2 class="text-3xl font-bold mb-8">Patrocinadores</h2>
 
-</div>
-</section>
+        <div class="grid md:grid-cols-4 gap-6">
+            <div class="bg-white p-6 shadow">Netflix</div>
+            <div class="bg-white p-6 shadow">Canon</div>
+            <div class="bg-white p-6 shadow">IMAX</div>
+            <div class="bg-white p-6 shadow">Adobe</div>
+        </div>
+        </section>
 
-<!-- FOOTER -->
-<footer class="bg-black text-white py-10">
-<div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8 px-6">
+        <!-- FAQ -->
+        <section id="faq" class="bg-gray-200 py-16 px-6">
+        <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">Preguntas Frecuentes</h2>
 
-<div>
-<h3 class="font-bold text-xl mb-4">Stories From Mexico</h3>
-<p>El festival que celebra el arte del cine mexicano.</p>
-</div>
+        <p class="mb-4"><strong>¿Dónde se realiza el festival?</strong><br> EN  Irish Film Institute.</p>
+        <p class="mb-4"><strong>¿Se pueden comprar boletos en línea?</strong><br>Sí, mediante las plataformas oficiales.</p>
 
-<div>
-<h3 class="font-bold mb-4">Suscripción</h3>
-<input type="email" placeholder="Tu correo" class="p-2 text-black w-full mb-2">
-<button class="bg-green-500 px-4 py-2 text-black">Suscribirse</button>
-</div>
+        </div>
+        </section>
 
-<div>
-<h3 class="font-bold mb-4">Redes Sociales</h3>
-<p>Instagram</p>
-<p>Twitter</p>
-<p>YouTube</p>
-</div>
+        <!-- FOOTER -->
+        <footer class="bg-black text-white py-16">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+                <div>
+                    <h3 class="font-black text-2xl mb-4 border-b-2 border-green-500 inline-block">Stories From Mexico</h3>
+                    <p class="text-gray-400 leading-relaxed">Celebrando el arte cinematográfico mexicano en Dublín. Un puente cultural entre dos naciones unidas por la narrativa.</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4 uppercase tracking-widest text-green-500">Suscripción</h3>
+                    <p class="text-sm text-gray-400 mb-4">Recibe preventas exclusivas y noticias de directores invitados.</p>
+                    <div class="flex">
+                        <input type="email" placeholder="Tu correo" class="p-3 text-black w-full rounded-l-lg outline-none">
+                        <button class="bg-green-500 px-4 py-2 text-black font-bold rounded-r-lg hover:bg-green-400">OK</button>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Síguenos</h3>
+                    <div class="space-y-2 text-gray-400 font-medium">
+                        <p class="hover:text-white cursor-pointer transition">Instagram</p>
+                        <p class="hover:text-white cursor-pointer transition">Twitter / X</p>
+                        <p class="hover:text-white cursor-pointer transition">YouTube Channel</p>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12 border-t border-gray-800 pt-8 text-gray-600 text-sm">
+                <p>© 2026 Stories From Mexico | Irish Film Institute Partnership</p>
+            </div>
+        </footer>
 
-</div>
-
-<p class="text-center mt-8">© 2026 Stories From Mexico</p>
-</footer>
-
-</body>
+    </body>
 </html>

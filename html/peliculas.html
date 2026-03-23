@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cartelera 2026 - Stories From Mexico</title>
+    
+    <script src="/javascript/menu.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        .page-header {
+            height: 45vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+    <!--MENU-->
+    <header class="bg-white text-black fixed w-full z-50 shadow-md">
+        <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <img src="../img/logo.jpeg" width="140" alt="Logo Stories From Mexico">
+                </a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden p-2 focus:outline-none hover:bg-gray-100 rounded-lg">
+                <svg class="w-8 h-8 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-semibold uppercase tracking-wide">
+                <a href="index.html" class="hover:text-green-500 transition">Inicio</a>
+                <a href="peliculas.html" class="text-green-600 border-b-2 border-green-600 transition">Películas</a>
+                
+                <div class="relative group">
+                    <button class="flex items-center hover:text-green-500 transition focus:outline-none">
+                        Información 
+                        <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-48 shadow-xl rounded-b-lg">
+                        <a href="index.html#about-us" class="block px-4 py-2 hover:bg-gray-100">Sobre Nosotros</a>
+                        <a href="index.html#faq" class="block px-4 py-2 hover:bg-gray-100">FAQ</a>
+                        <div class="relative group/sub">
+                            <button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100 text-left">
+                                Ediciones <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg>
+                            </button>
+                            <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">2025</a>
+                                <a href="#" class="block px-4 py-2 hover:bg-gray-100">2024</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#boletos" class="bg-green-500 text-black px-5 py-2 rounded-full font-bold hover:bg-green-400 transition shadow-sm">
+                    Comprar Boletos
+                </a>
+            </nav>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0">
+            <nav class="flex flex-col p-6 space-y-5">
+                <a href="index.html" class="text-lg font-medium border-b border-gray-50 pb-2">Inicio</a>
+                <a href="peliculas.html" class="text-lg font-medium border-b border-gray-50 pb-2 text-green-600">Películas</a>
+                <div>
+                    <button onclick="toggleElement('mobile-info')" class="flex justify-between w-full text-lg font-medium">
+                        Información
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div id="mobile-info" class="hidden flex flex-col pl-4 mt-3 space-y-3 border-l-2 border-green-500 bg-gray-50 p-3 rounded">
+                        <a href="index.html#about-us" class="text-gray-700">Sobre Nosotros</a>
+                        <a href="index.html#faq" class="text-gray-700">FAQ</a>
+                        <div>
+                            <button onclick="toggleElement('mobile-ediciones')" class="flex justify-between w-full text-gray-700 italic">
+                                Ediciones pasadas
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+                            </button>
+                            <div id="mobile-ediciones" class="hidden pl-4 mt-2 space-y-2 text-sm text-gray-500">
+                                <a href="#" class="block text-gray-400">Edición 2026</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#boletos" class="bg-green-500 text-center py-3 rounded-lg font-bold text-black shadow-md">Comprar Boletos</a>
+            </nav>
+        </div>
+    </header>
+
+    
+
+    <section class="page-header flex items-center justify-center text-white pt-20">
+        <div class="text-center px-6">
+            <h1 class="text-5xl md:text-6xl font-black mb-4 uppercase tracking-tighter">Cartelera Oficial</h1>
+            <p class="text-xl md:text-2xl text-green-400 font-bold uppercase tracking-widest">Edición 2026 | Dublín</p>
+        </div>
+    </section>
+
+    <section class="py-20 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="relative">
+                <div class="absolute inset-0 bg-green-500 rounded-2xl transform rotate-3 scale-105 opacity-20"></div>
+                <img src="https://m.media-amazon.com/images/M/MV5BY2IxZDAyNzEtYmNmYi00YWEwLTgwZTUtMzVmYzg5NGUwNzYxXkEyXkFqcGc@._V1_.jpg" 
+                     class="relative rounded-2xl shadow-2xl object-cover h-[500px] w-full" alt="Película Destacada">
+                <div class="absolute -top-4 -right-4 bg-red-600 text-white px-6 py-2 rounded-lg font-bold shadow-lg">PELÍCULA DE APERTURA</div>
+            </div>
+            <div>
+                <h2 class="text-4xl font-extrabold mb-6 text-gray-900 border-l-8 border-red-600 pl-4">La Novia</h2>
+                <p class="text-lg text-gray-700 mb-6 leading-relaxed italic">"Una joya visual que redefine el suspenso en el cine mexicano."</p>
+                <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+                    es una película de romance de ciencia ficción estadounidense dirigida, escrita y coproducida por Maggie Gyllenhaal y protagonizada por Christian Bale, Jessie Buckley, Peter Sarsgaard, Annette Bening, Penélope Cruz y Julianne Hough.
+                </p>
+                <div class="grid grid-cols-2 gap-6 border-t border-gray-200 pt-6">
+                    <div>
+                        <p class="text-sm uppercase text-gray-500 font-bold">Director</p>
+                        <p class="font-bold text-gray-800">Maggie Gyllenhaal</p>
+                    </div>
+                    <div>
+                        <p class="text-sm uppercase text-gray-500 font-bold">Sede</p>
+                        <p class="font-bold text-gray-800">Irish Film Institute</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="catalogo" class="bg-gray-100 py-16 px-6 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-3xl font-bold mb-12 text-center uppercase tracking-widest">Largometrajes</h2>
+            <div class="grid md:grid-cols-3 gap-10">
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition hover:scale-105 duration-300">
+                    <img src="https://indierocks.sfo3.digitaloceanspaces.com/wp-content/uploads/2025/09/Bad-Bunyy-NFL.jpg" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-green-600 text-xs font-black uppercase">Documental</span>
+                        <h3 class="text-xl font-bold mt-1">Superbowl LX: Halftime Show</h3>
+                        <p class="text-gray-600 mt-2 text-sm">El espectáculo de medio tiempo del Super Bowl LX (2026) fue encabezado por el artista puertorriqueño Bad Bunny, marcando un hito histórico al ser el primer solista latino en liderar el show con un repertorio mayoritariamente en español.</p>
+                        <button class="mt-4 text-red-600 font-bold hover:underline">Ver Horarios →</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition hover:scale-105 duration-300">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm8aTlwUQkPqZ5A4pyO2YszjlEGT3SniEpTA&s" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-red-600 text-xs font-black uppercase">Clásico</span>
+                        <h3 class="text-xl font-bold mt-1">Cumbres Borrascosas</h3>
+                        <p class="text-gray-600 mt-2 text-sm">Cumbres Borrascosas ​es una película de drama histórico-romántico escrita, dirigida y producida por Emerald Fennell, basada en la novela homónima de 1847 de Emily Brontë. Está protagonizada por Margot Robbie y Jacob Elordi.</p>
+                        <button class="mt-4 text-red-600 font-bold hover:underline">Ver Horarios →</button>
+                    </div>
+                </div>
+                <div class="bg-white rounded-xl overflow-hidden shadow-lg transition hover:scale-105 duration-300">
+                    <img src="https://m.media-amazon.com/images/M/MV5BMzYzNjEyMTUtOGI2Ny00MzM4LWIxNGYtMmIzNzA0Y2ZkMjkwXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" class="w-full h-64 object-cover">
+                    <div class="p-6">
+                        <span class="text-blue-600 text-xs font-black uppercase">Comedia Mexicana</span>
+                        <h3 class="text-xl font-bold mt-1">No manches frida 2</h3>
+                        <p class="text-gray-600 mt-2 text-sm">A punto de llegar al altar, Lucy se da cuenta de que Zequi sigue siendo un hombre despreocupado e irresponsable. Para que ella lo perdone, Zequi deberá demostrarle que la ama incondicionalmente… con todo y sus alumnos.</p>
+                        <button class="mt-4 text-red-600 font-bold hover:underline">Ver Horarios →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black text-white py-16">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+            <div>
+                <h3 class="font-black text-2xl mb-4 border-b-2 border-green-500 inline-block">Stories From Mexico</h3>
+                <p class="text-gray-400 leading-relaxed">Celebrando el arte cinematográfico mexicano en Dublín. Un puente cultural entre dos naciones unidas por la narrativa.</p>
+            </div>
+            <div>
+                <h3 class="font-bold mb-4 uppercase tracking-widest text-green-500">Suscripción</h3>
+                <p class="text-sm text-gray-400 mb-4">Recibe preventas exclusivas y noticias de directores invitados.</p>
+                <div class="flex">
+                    <input type="email" placeholder="Tu correo" class="p-3 text-black w-full rounded-l-lg outline-none">
+                    <button class="bg-green-500 px-4 py-2 text-black font-bold rounded-r-lg hover:bg-green-400">OK</button>
+                </div>
+            </div>
+            <div>
+                <h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Síguenos</h3>
+                <div class="space-y-2 text-gray-400 font-medium">
+                    <p class="hover:text-white cursor-pointer transition">Instagram</p>
+                    <p class="hover:text-white cursor-pointer transition">Twitter / X</p>
+                    <p class="hover:text-white cursor-pointer transition">YouTube Channel</p>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12 border-t border-gray-800 pt-8 text-gray-600 text-sm">
+            <p>© 2026 Stories From Mexico | Irish Film Institute Partnership</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            if (btn && menu) {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menu.classList.toggle('hidden');
+                });
+            }
+        });
+
+        function toggleElement(id) {
+            const el = document.getElementById(id);
+            if (el) el.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>
