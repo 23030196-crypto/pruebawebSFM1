@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Program – Stories From México</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>.page-header{height:45vh;background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;}</style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-white text-black fixed w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <div class="flex-shrink-0"><a href="index.html"><img src="../img/logo.jpeg" width="140" alt="SFM"></a></div>
+    <button id="menu-btn" class="xl:hidden p-2 hover:bg-gray-100 rounded-lg"><svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+    <nav class="hidden xl:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider">
+      <div class="relative group"><button class="flex items-center hover:text-green-600">About Us <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border py-2 w-48 shadow-xl rounded-b-lg">
+          <a href="who-we-are.html" class="block px-4 py-2 hover:bg-gray-100">Who We Are</a><a href="our-impact.html" class="block px-4 py-2 hover:bg-gray-100">Our Impact</a>
+          <div class="relative group/sub"><button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100 text-left">Support SFM <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></button>
+            <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
+              <a href="volunteers.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Volunteers</a><a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-red-600">Donations</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative group"><button class="flex items-center hover:text-green-600">Our Festival <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border py-2 w-56 shadow-xl rounded-b-lg">
+          <a href="submissions.html" class="block px-4 py-2 hover:bg-gray-100">Submissions</a><a href="team.html" class="block px-4 py-2 hover:bg-gray-100">Meet the Team</a><a href="partners.html" class="block px-4 py-2 hover:bg-gray-100">Partners</a>
+        </div>
+      </div>
+      <div class="relative group"><button class="flex items-center text-green-600 border-b-2 border-green-600">Events <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border py-2 w-48 shadow-xl rounded-b-lg">
+          <a href="program.html" class="block px-4 py-2 hover:bg-gray-100">Program</a><a href="venues.html" class="block px-4 py-2 hover:bg-gray-100">Venues</a>
+          <a href="raffles.html" class="block px-4 py-2 hover:bg-gray-100">Raffles</a><a href="exhibitions.html" class="block px-4 py-2 hover:bg-gray-100">Exhibitions</a>
+          <a href="gastronomy.html" class="block px-4 py-2 hover:bg-gray-100">Gastronomy</a>
+        </div>
+      </div>
+      <a href="gallery.html" class="hover:text-green-600">Gallery</a><a href="merch.html" class="hover:text-green-600">Merch</a><a href="contact.html" class="hover:text-green-600">Contact</a>
+      <a href="newsletter.html" class="bg-black text-white px-4 py-2 rounded font-bold hover:bg-gray-800">Newsletter</a>
+      <a href="sponsors.html" class="bg-green-600 text-white px-4 py-2 rounded font-bold hover:bg-green-500">Sponsors</a>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t shadow-2xl absolute w-full left-0 max-h-screen overflow-y-auto pb-20">
+    <nav class="flex flex-col p-6 space-y-4">
+      <a href="who-we-are.html" class="text-lg font-bold border-b pb-2">Who We Are</a><a href="submissions.html" class="text-lg font-bold border-b pb-2">Submissions</a>
+      <a href="program.html" class="text-lg font-bold border-b pb-2 text-green-600">Program</a><a href="venues.html" class="text-lg font-bold border-b pb-2">Venues</a>
+      <a href="gallery.html" class="text-lg font-bold border-b pb-2">Gallery</a><a href="contact.html" class="text-lg font-bold border-b pb-2">Contact</a>
+      <a href="sponsors.html" class="bg-green-600 text-center py-3 rounded-lg font-bold text-white">Sponsors</a>
+    </nav>
+  </div>
+</header>
+<section class="page-header flex items-center justify-center text-white pt-20">
+  <div class="text-center px-6">
+    <h1 class="text-5xl md:text-6xl font-black mb-4 uppercase tracking-tighter">Festival Program</h1>
+    <p class="text-xl md:text-2xl text-green-400 font-bold uppercase tracking-widest">September 7–11, 2026 · Dublin</p>
+  </div>
+</section>
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="text-center mb-16">
+    <span class="text-green-600 font-bold uppercase tracking-widest text-sm">2026 Edition</span>
+    <h2 class="text-4xl font-extrabold mt-2 text-gray-900">Festival Schedule</h2>
+    <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">Five days of Mexican cinema, culture, music, dance, and gastronomy at the Light House Cinema, Dublin.</p>
+  </div>
+  <div class="space-y-8">
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-green-500">
+      <div class="bg-green-500 text-white px-8 py-4 flex justify-between items-center">
+        <div><p class="text-xs font-bold uppercase tracking-widest">Day 1</p><h3 class="text-2xl font-black">September 7 · Inauguration</h3></div>
+        <span class="text-green-100 font-bold text-lg">Monday</span>
+      </div>
+      <div class="p-8 grid md:grid-cols-3 gap-6">
+        <div class="border-l-2 border-green-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Opening</p><p class="font-bold text-gray-900">Traditional Mexican Dance</p><p class="text-sm text-gray-600">Calpulli Mictlán performance + Mexican food reception</p></div>
+        <div class="border-l-2 border-green-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Short Film</p><p class="font-bold text-gray-900">TBA · Opening Short</p><p class="text-sm text-gray-600">Introduction by cast or crew</p></div>
+        <div class="border-l-2 border-green-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Feature Film</p><p class="font-bold text-gray-900">TBA · Opening Feature</p><p class="text-sm text-gray-600">Introduction + surprise dynamic</p></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-red-500">
+      <div class="bg-red-600 text-white px-8 py-4 flex justify-between items-center">
+        <div><p class="text-xs font-bold uppercase tracking-widest">Day 2</p><h3 class="text-2xl font-black">September 8 · México & the World</h3></div>
+        <span class="text-red-200 font-bold text-lg">Tuesday</span>
+      </div>
+      <div class="p-8 grid md:grid-cols-3 gap-6">
+        <div class="border-l-2 border-red-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Exhibition</p><p class="font-bold text-gray-900">Photography & Visual Arts</p><p class="text-sm text-gray-600">Daily exhibition by Mexican artists opens</p></div>
+        <div class="border-l-2 border-red-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Short Film</p><p class="font-bold text-gray-900">Mexican Co-production</p><p class="text-sm text-gray-600">Co-produced with an international partner</p></div>
+        <div class="border-l-2 border-red-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Feature Film</p><p class="font-bold text-gray-900">Mexican Co-production</p><p class="text-sm text-gray-600">International co-production with optional intro</p></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-green-500">
+      <div class="bg-green-600 text-white px-8 py-4 flex justify-between items-center">
+        <div><p class="text-xs font-bold uppercase tracking-widest">Day 3</p><h3 class="text-2xl font-black">September 9 · México & Ireland</h3></div>
+        <span class="text-green-100 font-bold text-lg">Wednesday</span>
+      </div>
+      <div class="p-8 grid md:grid-cols-3 gap-6">
+        <div class="border-l-2 border-green-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Networking</p><p class="font-bold text-gray-900">Irish–Mexican Artists Hub</p><p class="text-sm text-gray-600">Music, food, and networking between artists</p></div>
+        <div class="border-l-2 border-green-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Short Film</p><p class="font-bold text-gray-900">Irish–Mexican Co-production</p><p class="text-sm text-gray-600">Film celebrating both cultures</p></div>
+        <div class="border-l-2 border-green-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Feature Film</p><p class="font-bold text-gray-900">Irish–Mexican Co-production</p><p class="text-sm text-gray-600">Optional introduction</p></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-red-500">
+      <div class="bg-gray-900 text-white px-8 py-4 flex justify-between items-center">
+        <div><p class="text-xs font-bold uppercase tracking-widest">Day 4</p><h3 class="text-2xl font-black">September 10 · Guest Curator</h3></div>
+        <span class="text-gray-400 font-bold text-lg">Thursday</span>
+      </div>
+      <div class="p-8 grid md:grid-cols-3 gap-6">
+        <div class="border-l-2 border-gray-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Special Guest</p><p class="font-bold text-gray-900">Invited Festival Curator</p><p class="text-sm text-gray-600">Guest curator selects the program for the day</p></div>
+        <div class="border-l-2 border-gray-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Short Film</p><p class="font-bold text-gray-900">Curator's Selection</p><p class="text-sm text-gray-600">Hand-picked by the invited guest curator</p></div>
+        <div class="border-l-2 border-gray-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Feature Film</p><p class="font-bold text-gray-900">Curator's Selection</p><p class="text-sm text-gray-600">Optional introduction</p></div>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl shadow-lg overflow-hidden border-l-8 border-red-600">
+      <div class="bg-red-700 text-white px-8 py-4 flex justify-between items-center">
+        <div><p class="text-xs font-bold uppercase tracking-widest">Day 5</p><h3 class="text-2xl font-black">September 11 · Closing Night</h3></div>
+        <span class="text-red-200 font-bold text-lg">Friday</span>
+      </div>
+      <div class="p-8 grid md:grid-cols-3 gap-6">
+        <div class="border-l-2 border-red-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Closing Ceremony</p><p class="font-bold text-gray-900">Music, Dance & Dinner</p><p class="text-sm text-gray-600">Traditional music and Mexican food reception</p></div>
+        <div class="border-l-2 border-red-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Short Film</p><p class="font-bold text-gray-900">Closing Short</p><p class="text-sm text-gray-600">Introduction + surprise dynamic</p></div>
+        <div class="border-l-2 border-red-300 pl-4"><p class="text-xs text-gray-500 uppercase font-bold">Feature Film</p><p class="font-bold text-gray-900">Closing Feature</p><p class="text-sm text-gray-600">Grand closing screening</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center mt-12">
+    <a href="index.html#boletos" class="inline-block bg-green-600 text-white px-10 py-4 rounded-full font-black text-xl hover:bg-green-500 transition shadow-lg">Get Your Tickets →</a>
+  </div>
+</section>
+<footer class="bg-black text-white py-16">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+    <div><h3 class="font-black text-2xl mb-4 border-b-2 border-green-500 inline-block">Stories From Mexico</h3><p class="text-gray-400">Celebrating Mexican cinema &amp; culture in Dublin.</p></div>
+    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-green-500">Quick Links</h3><div class="space-y-2 text-gray-400"><p><a href="submissions.html" class="hover:text-white">Submit a Film</a></p><p><a href="volunteers.html" class="hover:text-white">Volunteer</a></p><p><a href="sponsors.html" class="hover:text-white">Become a Sponsor</a></p></div></div>
+    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Follow Us</h3><div class="space-y-2 text-gray-400"><p>Instagram</p><p>Twitter / X</p><p>YouTube</p></div><p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p></div>
+  </div>
+  <div class="text-center mt-12 border-t border-gray-800 pt-8 text-gray-600 text-sm"><p>&copy; 2026 Stories From Mexico | Light House Cinema, Dublin</p></div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{const b=document.getElementById("menu-btn"),m=document.getElementById("mobile-menu");if(b&&m)b.addEventListener("click",e=>{e.stopPropagation();m.classList.toggle("hidden");});});
+  function toggleElement(id){const el=document.getElementById(id);if(el)el.classList.toggle("hidden");}
+</script>
+</body>
+</html>

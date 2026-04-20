@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Who We Are – Stories From México</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+  .page-header {
+    height: 45vh;
+    background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)),
+      url('https://images.unsplash.com/photo-1518998053901-5348d3961a04?auto=format&fit=crop&w=1400&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+</style>
+</head>
+<body class="bg-gray-100">
+
+<!-- NAVBAR -->
+<header class="bg-white text-black fixed w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <div class="flex-shrink-0">
+      <a href="index.html"><img src="../img/logo.jpeg" width="140" alt="Stories From Mexico Logo"></a>
+    </div>
+    <button id="menu-btn" class="xl:hidden p-2 focus:outline-none hover:bg-gray-100 rounded-lg">
+      <svg class="w-8 h-8 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </button>
+    <nav class="hidden xl:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider">
+      <!-- About Us -->
+      <div class="relative group">
+        <button class="flex items-center text-green-600 border-b-2 border-green-600 transition">
+          About Us <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+        </button>
+        <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-48 shadow-xl rounded-b-lg">
+          <a href="who-we-are.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Who We Are</a>
+          <a href="our-impact.html" class="block px-4 py-2 hover:bg-gray-100">Our Impact</a>
+          <div class="relative group/sub">
+            <button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100 text-left">Support SFM <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></button>
+            <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
+              <a href="volunteers.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Volunteers</a>
+              <a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-red-600">Donations</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Our Festival -->
+      <div class="relative group">
+        <button class="flex items-center hover:text-green-600 transition">Our Festival <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-56 shadow-xl rounded-b-lg">
+          <a href="submissions.html" class="block px-4 py-2 hover:bg-gray-100">Submissions</a>
+          <a href="team.html" class="block px-4 py-2 hover:bg-gray-100">Meet the Team</a>
+          <a href="partners.html" class="block px-4 py-2 hover:bg-gray-100">Partners</a>
+        </div>
+      </div>
+      <!-- Events -->
+      <div class="relative group">
+        <button class="flex items-center hover:text-green-600 transition">Events <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-48 shadow-xl rounded-b-lg">
+          <a href="program.html" class="block px-4 py-2 hover:bg-gray-100">Program</a>
+          <a href="venues.html" class="block px-4 py-2 hover:bg-gray-100">Venues</a>
+          <a href="raffles.html" class="block px-4 py-2 hover:bg-gray-100">Raffles</a>
+          <a href="exhibitions.html" class="block px-4 py-2 hover:bg-gray-100">Exhibitions</a>
+          <a href="gastronomy.html" class="block px-4 py-2 hover:bg-gray-100">Gastronomy</a>
+        </div>
+      </div>
+      <a href="gallery.html" class="hover:text-green-600 transition">Gallery</a>
+      <a href="merch.html" class="hover:text-green-600 transition">Merch</a>
+      <a href="contact.html" class="hover:text-green-600 transition">Contact</a>
+      <a href="newsletter.html" class="bg-black text-white px-4 py-2 rounded font-bold hover:bg-gray-800 transition">Newsletter</a>
+      <a href="sponsors.html" class="bg-green-600 text-white px-4 py-2 rounded font-bold hover:bg-green-500 transition">Sponsors</a>
+    </nav>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0 max-h-screen overflow-y-auto pb-20">
+    <nav class="flex flex-col p-6 space-y-4">
+      <div>
+        <button onclick="toggleElement('mob-about')" class="flex justify-between w-full text-lg font-bold border-b pb-2 text-green-600">About Us <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div id="mob-about" class="hidden flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-green-500">
+          <a href="who-we-are.html" class="text-green-600">Who We Are</a>
+          <a href="our-impact.html" class="text-gray-700">Our Impact</a>
+          <div>
+            <button onclick="toggleElement('mob-support')" class="flex justify-between w-full text-gray-700 font-semibold">Support SFM <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+            <div id="mob-support" class="hidden pl-4 mt-2 space-y-2 flex flex-col">
+              <a href="volunteers.html" class="text-green-600">Volunteers</a>
+              <a href="donations.html" class="text-red-600">Donations</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button onclick="toggleElement('mob-festival')" class="flex justify-between w-full text-lg font-bold border-b pb-2">Our Festival <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div id="mob-festival" class="hidden flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-green-500">
+          <a href="submissions.html" class="text-gray-700">Submissions</a>
+          <a href="team.html" class="text-gray-700">Meet the Team</a>
+          <a href="partners.html" class="text-gray-700">Partners</a>
+        </div>
+      </div>
+      <div>
+        <button onclick="toggleElement('mob-events')" class="flex justify-between w-full text-lg font-bold border-b pb-2">Events <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div id="mob-events" class="hidden flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-green-500">
+          <a href="program.html" class="text-gray-700">Program</a>
+          <a href="venues.html" class="text-gray-700">Venues</a>
+          <a href="raffles.html" class="text-gray-700">Raffles</a>
+          <a href="exhibitions.html" class="text-gray-700">Exhibitions</a>
+          <a href="gastronomy.html" class="text-gray-700">Gastronomy</a>
+        </div>
+      </div>
+      <a href="gallery.html" class="text-lg font-bold border-b pb-2">Gallery</a>
+      <a href="merch.html" class="text-lg font-bold border-b pb-2">Merch</a>
+      <a href="contact.html" class="text-lg font-bold border-b pb-2">Contact</a>
+      <a href="newsletter.html" class="bg-black text-center py-3 rounded-lg font-bold text-white">Newsletter</a>
+      <a href="sponsors.html" class="bg-green-600 text-center py-3 rounded-lg font-bold text-white">Sponsors</a>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HEADER -->
+<section class="page-header flex items-center justify-center text-white pt-20">
+  <div class="text-center px-6">
+    <h1 class="text-5xl md:text-6xl font-black mb-4 uppercase tracking-tighter">Who We Are</h1>
+    <p class="text-xl md:text-2xl text-green-400 font-bold uppercase tracking-widest">Stories From México</p>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="grid lg:grid-cols-2 gap-16 items-center">
+    <div>
+      <span class="text-red-600 font-bold uppercase tracking-widest text-sm">About Us</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold mt-2 mb-8 text-gray-900 border-l-8 border-green-600 pl-4">Who We Are</h2>
+      <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+        <strong>Stories from México</strong> is a Mexican Cinema & Culture Week held in Dublin, Ireland — a festival designed to be the bridge connecting two nations through the power of storytelling, cinema, and art.
+      </p>
+      <p class="text-lg text-gray-700 mb-6 leading-relaxed">
+        We exist to give Mexican filmmakers greater global exposure while supporting the local Mexican community living in Ireland in a simple and direct way. At the same time, we open a platform for Irish artists to exhibit their work in Mexico.
+      </p>
+      <p class="text-lg text-gray-700 mb-8 leading-relaxed">
+        In Dublin, the Latin American and Spanish-speaking community surpassed 55,000 residents in 2025 — approximately 7% of whom are Mexican. Despite the growing presence of both communities, Mexican productions have had limited reach in Ireland due to distribution challenges. <strong>Stories from México</strong> was born to change that.
+      </p>
+      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-red-600 shadow-md">
+        <h4 class="font-black text-xl text-red-600 mb-3 uppercase tracking-wider">Our Objective</h4>
+        <p class="text-gray-800 font-medium leading-relaxed">
+          To promote the cultural richness and diversity of Mexico in Ireland through cinema and other artistic expressions, strengthening the cultural ties between both countries within the framework of Mexican Independence celebrations.
+        </p>
+      </div>
+    </div>
+    <div class="relative">
+      <div class="absolute inset-0 bg-green-600 rounded-2xl transform rotate-3 scale-105 opacity-20"></div>
+      <img src="https://images.unsplash.com/photo-1598897349489-0d27ef232482?auto=format&fit=crop&w=800&q=80"
+        alt="Mexican Culture in Dublin" class="relative rounded-2xl shadow-2xl object-cover h-[500px] w-full">
+      <div class="absolute -bottom-8 -left-8 bg-black text-white p-6 rounded-xl shadow-2xl hidden md:block border-b-4 border-green-500">
+        <p class="text-4xl font-black text-white mb-1">5 <span class="text-xl font-light text-gray-400">Days</span></p>
+        <p class="text-sm uppercase tracking-widest text-green-400 font-bold">100% In-Person Event</p>
+        <p class="text-xs text-gray-400 mt-2">Sept 7–11, 2026 · Dublin</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+<section class="bg-white py-20 px-6">
+  <div class="max-w-7xl mx-auto">
+    <h2 class="text-3xl font-bold mb-12 text-center uppercase tracking-widest text-gray-900">Our Values</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-green-500 shadow-md hover:-translate-y-2 transition duration-300">
+        <div class="text-green-500 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Cultural Bridge</h3>
+        <p class="text-gray-600">We connect Mexico and Ireland through shared stories, traditions, and artistic expressions that transcend language and borders.</p>
+      </div>
+      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-red-500 shadow-md hover:-translate-y-2 transition duration-300">
+        <div class="text-red-500 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Community First</h3>
+        <p class="text-gray-600">We actively involve Mexican cultural groups already established in Ireland — in gastronomy, cinema, dance, photography, painting and music.</p>
+      </div>
+      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-green-500 shadow-md hover:-translate-y-2 transition duration-300">
+        <div class="text-green-500 mb-4">
+          <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path></svg>
+        </div>
+        <h3 class="text-xl font-bold mb-3">Cinema as Art</h3>
+        <p class="text-gray-600">We believe Mexican cinema deserves a global stage. Every film we screen is a story that expands the world's understanding of México.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-black text-white py-16">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+    <div>
+      <h3 class="font-black text-2xl mb-4 border-b-2 border-green-500 inline-block">Stories From Mexico</h3>
+      <p class="text-gray-400 leading-relaxed">Celebrating Mexican cinema & culture in Dublin. A cultural bridge between two nations united by storytelling.</p>
+    </div>
+    <div>
+      <h3 class="font-bold mb-4 uppercase tracking-widest text-green-500">Quick Links</h3>
+      <div class="space-y-2 text-gray-400">
+        <p><a href="submissions.html" class="hover:text-white transition">Submit a Film</a></p>
+        <p><a href="volunteers.html" class="hover:text-white transition">Volunteer</a></p>
+        <p><a href="contact.html" class="hover:text-white transition">Contact Us</a></p>
+        <p><a href="sponsors.html" class="hover:text-white transition">Become a Sponsor</a></p>
+      </div>
+    </div>
+    <div>
+      <h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Follow Us</h3>
+      <div class="space-y-2 text-gray-400 font-medium">
+        <p class="hover:text-white cursor-pointer transition">Instagram</p>
+        <p class="hover:text-white cursor-pointer transition">Twitter / X</p>
+        <p class="hover:text-white cursor-pointer transition">YouTube Channel</p>
+      </div>
+      <p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p>
+    </div>
+  </div>
+  <div class="text-center mt-12 border-t border-gray-800 pt-8 text-gray-600 text-sm">
+    <p>© 2026 Stories From Mexico | Light House Cinema, Dublin</p>
+  </div>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('menu-btn');
+    const menu = document.getElementById('mobile-menu');
+    if (btn && menu) btn.addEventListener('click', (e) => { e.stopPropagation(); menu.classList.toggle('hidden'); });
+  });
+  function toggleElement(id) { const el = document.getElementById(id); if (el) el.classList.toggle('hidden'); }
+</script>
+</body>
+</html>

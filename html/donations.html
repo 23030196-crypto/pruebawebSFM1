@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate – Stories From México</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>.page-header{height:45vh;background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;}</style>
+</head>
+<body class="bg-gray-100">
+<header class="bg-white text-black fixed w-full z-50 shadow-md">
+  <div class="max-w-7xl mx-auto flex justify-between items-center p-4">
+    <div class="flex-shrink-0"><a href="index.html"><img src="../img/logo.jpeg" width="140" alt="Stories From Mexico Logo"></a></div>
+    <button id="menu-btn" class="xl:hidden p-2 focus:outline-none hover:bg-gray-100 rounded-lg"><svg class="w-8 h-8 pointer-events-none" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg></button>
+    <nav class="hidden xl:flex items-center space-x-6 text-xs font-bold uppercase tracking-wider">
+      <div class="relative group"><button class="flex items-center hover:text-green-600 transition">About Us <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-48 shadow-xl rounded-b-lg">
+          <a href="who-we-are.html" class="block px-4 py-2 hover:bg-gray-100">Who We Are</a>
+          <a href="our-impact.html" class="block px-4 py-2 hover:bg-gray-100">Our Impact</a>
+          <div class="relative group/sub"><button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100 text-left">Support SFM <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></button>
+            <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
+              <a href="volunteers.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Volunteers</a>
+              <a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-red-600">Donations</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="relative group"><button class="flex items-center hover:text-green-600 transition">Our Festival <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-56 shadow-xl rounded-b-lg">
+          <a href="submissions.html" class="block px-4 py-2 hover:bg-gray-100">Submissions</a>
+          <a href="team.html" class="block px-4 py-2 hover:bg-gray-100">Meet the Team</a>
+          <a href="partners.html" class="block px-4 py-2 hover:bg-gray-100">Partners</a>
+        </div>
+      </div>
+      <div class="relative group"><button class="flex items-center hover:text-green-600 transition">Events <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div class="absolute hidden group-hover:block bg-white border mt-0 py-2 w-48 shadow-xl rounded-b-lg">
+          <a href="program.html" class="block px-4 py-2 hover:bg-gray-100">Program</a>
+          <a href="venues.html" class="block px-4 py-2 hover:bg-gray-100">Venues</a>
+          <a href="raffles.html" class="block px-4 py-2 hover:bg-gray-100">Raffles</a>
+          <a href="exhibitions.html" class="block px-4 py-2 hover:bg-gray-100">Exhibitions</a>
+          <a href="gastronomy.html" class="block px-4 py-2 hover:bg-gray-100">Gastronomy</a>
+        </div>
+      </div>
+      <a href="gallery.html" class="hover:text-green-600 transition">Gallery</a>
+      <a href="merch.html" class="hover:text-green-600 transition">Merch</a>
+      <a href="contact.html" class="hover:text-green-600 transition">Contact</a>
+      <a href="newsletter.html" class="bg-black text-white px-4 py-2 rounded font-bold hover:bg-gray-800 transition">Newsletter</a>
+      <a href="sponsors.html" class="bg-green-600 text-white px-4 py-2 rounded font-bold hover:bg-green-500 transition">Sponsors</a>
+    </nav>
+  </div>
+  <div id="mobile-menu" class="hidden xl:hidden bg-white border-t border-gray-100 shadow-2xl absolute w-full left-0 max-h-screen overflow-y-auto pb-20">
+    <nav class="flex flex-col p-6 space-y-4">
+      <div><button onclick="toggleElement('mob-about')" class="flex justify-between w-full text-lg font-bold border-b pb-2">About Us <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div id="mob-about" class="hidden flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-green-500">
+          <a href="who-we-are.html" class="text-gray-700">Who We Are</a><a href="our-impact.html" class="text-gray-700">Our Impact</a>
+          <a href="volunteers.html" class="text-green-600">Volunteers</a><a href="donations.html" class="text-red-600">Donations</a>
+        </div>
+      </div>
+      <div><button onclick="toggleElement('mob-festival')" class="flex justify-between w-full text-lg font-bold border-b pb-2">Our Festival <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div id="mob-festival" class="hidden flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-green-500">
+          <a href="submissions.html" class="text-gray-700">Submissions</a><a href="team.html" class="text-gray-700">Meet the Team</a><a href="partners.html" class="text-gray-700">Partners</a>
+        </div>
+      </div>
+      <div><button onclick="toggleElement('mob-events')" class="flex justify-between w-full text-lg font-bold border-b pb-2">Events <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
+        <div id="mob-events" class="hidden flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-green-500">
+          <a href="program.html" class="text-gray-700">Program</a><a href="venues.html" class="text-gray-700">Venues</a>
+          <a href="raffles.html" class="text-gray-700">Raffles</a><a href="exhibitions.html" class="text-gray-700">Exhibitions</a>
+          <a href="gastronomy.html" class="text-gray-700">Gastronomy</a>
+        </div>
+      </div>
+      <a href="gallery.html" class="text-lg font-bold border-b pb-2">Gallery</a>
+      <a href="merch.html" class="text-lg font-bold border-b pb-2">Merch</a>
+      <a href="contact.html" class="text-lg font-bold border-b pb-2">Contact</a>
+      <a href="newsletter.html" class="bg-black text-center py-3 rounded-lg font-bold text-white">Newsletter</a>
+      <a href="sponsors.html" class="bg-green-600 text-center py-3 rounded-lg font-bold text-white">Sponsors</a>
+    </nav>
+  </div>
+</header>
+<section class="page-header flex items-center justify-center text-white pt-20">
+  <div class="text-center px-6">
+    <h1 class="text-5xl md:text-6xl font-black mb-4 uppercase tracking-tighter">Support SFM</h1>
+    <p class="text-xl md:text-2xl text-green-400 font-bold uppercase tracking-widest">Make Mexican Cinema Happen</p>
+  </div>
+</section>
+<section class="py-20 px-6 max-w-7xl mx-auto">
+  <div class="text-center mb-16">
+    <span class="text-red-600 font-bold uppercase tracking-widest text-sm">Support Us</span>
+    <h2 class="text-4xl font-extrabold mt-2 text-gray-900">Help Us Grow</h2>
+    <p class="text-gray-600 mt-4 text-lg max-w-2xl mx-auto">Stories From México runs on passion and community support. Your donation helps us bring more Mexican cinema and culture to Dublin.</p>
+  </div>
+  <div class="grid md:grid-cols-3 gap-8 mb-16">
+    <div class="bg-white rounded-2xl p-10 shadow-xl text-center border-2 border-gray-200 hover:border-green-400 transition duration-300">
+      <p class="text-5xl font-black text-green-600 mb-2">€10</p>
+      <h3 class="text-xl font-bold mb-4">Supporter</h3>
+      <p class="text-gray-600 mb-6">Helps cover program printing and venue materials for one screening day.</p>
+      <button onclick="alert('Redirecting to payment...')" class="w-full bg-green-600 text-white py-3 rounded-lg font-bold hover:bg-green-500 transition">Donate €10</button>
+    </div>
+    <div class="bg-green-600 rounded-2xl p-10 shadow-xl text-center text-white transform scale-105">
+      <p class="text-5xl font-black mb-2">€25</p>
+      <h3 class="text-xl font-bold mb-4">Friend of SFM ⭐</h3>
+      <p class="text-green-100 mb-6">Supports one day of artist exhibition materials and contributes to the cultural reception.</p>
+      <button onclick="alert('Redirecting to payment...')" class="w-full bg-white text-green-700 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Donate €25</button>
+    </div>
+    <div class="bg-white rounded-2xl p-10 shadow-xl text-center border-2 border-gray-200 hover:border-red-400 transition duration-300">
+      <p class="text-5xl font-black text-red-600 mb-2">€50+</p>
+      <h3 class="text-xl font-bold mb-4">Patron</h3>
+      <p class="text-gray-600 mb-6">Named recognition in our program guide and thank-you on social media.</p>
+      <button onclick="alert('Redirecting to payment...')" class="w-full bg-red-600 text-white py-3 rounded-lg font-bold hover:bg-red-500 transition">Donate €50+</button>
+    </div>
+  </div>
+  <div class="max-w-2xl mx-auto bg-gray-50 rounded-2xl p-10 text-center border-t-4 border-red-500 shadow-md">
+    <h3 class="text-2xl font-bold mb-4">Custom Amount</h3>
+    <p class="text-gray-600 mb-6">Every euro counts. Donate any amount and help us build a better festival for 2026 and beyond.</p>
+    <div class="flex gap-4 max-w-sm mx-auto">
+      <div class="flex-1 relative"><span class="absolute left-3 top-3 text-gray-500 font-bold">€</span><input type="number" placeholder="Amount" class="w-full border border-gray-300 rounded-lg p-3 pl-7 focus:outline-none focus:border-red-500"></div>
+      <button onclick="alert('Thank you for your generosity!')" class="bg-red-600 text-white px-6 py-3 rounded-lg font-bold hover:bg-red-500 transition">Donate</button>
+    </div>
+    <p class="text-gray-500 text-sm mt-6">Donations support operational costs. For sponsorship inquiries, see our <a href="sponsors.html" class="text-green-600 underline">Sponsors page</a>.</p>
+  </div>
+</section>
+<footer class="bg-black text-white py-16">
+  <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
+    <div><h3 class="font-black text-2xl mb-4 border-b-2 border-green-500 inline-block">Stories From Mexico</h3><p class="text-gray-400 leading-relaxed">Celebrating Mexican cinema &amp; culture in Dublin. A cultural bridge between two nations united by storytelling.</p></div>
+    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-green-500">Quick Links</h3><div class="space-y-2 text-gray-400"><p><a href="submissions.html" class="hover:text-white transition">Submit a Film</a></p><p><a href="volunteers.html" class="hover:text-white transition">Volunteer</a></p><p><a href="contact.html" class="hover:text-white transition">Contact Us</a></p><p><a href="sponsors.html" class="hover:text-white transition">Become a Sponsor</a></p></div></div>
+    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Follow Us</h3><div class="space-y-2 text-gray-400 font-medium"><p class="hover:text-white cursor-pointer transition">Instagram</p><p class="hover:text-white cursor-pointer transition">Twitter / X</p><p class="hover:text-white cursor-pointer transition">YouTube Channel</p></div><p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p></div>
+  </div>
+  <div class="text-center mt-12 border-t border-gray-800 pt-8 text-gray-600 text-sm"><p>&copy; 2026 Stories From Mexico | Light House Cinema, Dublin</p></div>
+</footer>
+<script>
+  document.addEventListener("DOMContentLoaded",()=>{const b=document.getElementById("menu-btn"),m=document.getElementById("mobile-menu");if(b&&m)b.addEventListener("click",e=>{e.stopPropagation();m.classList.toggle("hidden");});});
+  function toggleElement(id){const el=document.getElementById(id);if(el)el.classList.toggle("hidden");}
+</script>
+</body>
+</html>
