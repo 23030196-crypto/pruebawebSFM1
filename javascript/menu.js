@@ -21,3 +21,11 @@ function toggleElement(id) {
         console.log("Desplegando sección:", id);
     }
 }
+
+function toggleFAQ(id) {
+    const element = document.getElementById(id);
+    if (element) {
+        element.classList.toggle('hidden');
+        console.log("Desplegando sección:", id);
+    }
+}
