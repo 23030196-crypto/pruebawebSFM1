@@ -4,6 +4,27 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Submissions – Stories From México</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        rosa: {
+          50: "#fef2f9",
+          100: "#fce4f0",
+          200: "#f9c9e1",
+          300: "#f59cc8",
+          400: "#f06dab",
+          500: "#e91e8c",
+          600: "#d4006c",
+          700: "#a80055",
+          800: "#831843"
+        }
+      }
+    }
+  }
+}
+</script>
 <style>.page-header{height:45vh;background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;}</style>
 </head>
 <body class="bg-gray-100">
@@ -19,7 +40,7 @@
           <div class="relative group/sub"><button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100 text-left">Support SFM <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></button>
             <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
               <a href="volunteers.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Volunteers</a>
-              <a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-red-600">Donations</a>
+              <a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-rosa-600">Donations</a>
             </div>
           </div>
         </div>
@@ -52,7 +73,7 @@
       <div><button onclick="toggleElement('mob-about')" class="flex justify-between w-full text-lg font-bold border-b pb-2">About Us <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
         <div id="mob-about" class="hidden flex flex-col pl-4 mt-2 space-y-2 border-l-2 border-green-500">
           <a href="who-we-are.html" class="text-gray-700">Who We Are</a><a href="our-impact.html" class="text-gray-700">Our Impact</a>
-          <a href="volunteers.html" class="text-green-600">Volunteers</a><a href="donations.html" class="text-red-600">Donations</a>
+          <a href="volunteers.html" class="text-green-600">Volunteers</a><a href="donations.html" class="text-rosa-600">Donations</a>
         </div>
       </div>
       <div><button onclick="toggleElement('mob-festival')" class="flex justify-between w-full text-lg font-bold border-b pb-2">Our Festival <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
@@ -92,8 +113,8 @@
       <h3 class="text-xl font-bold mb-2">Feature Films</h3>
       <p class="text-gray-600 text-sm">Mexican feature films over 60 min. Drama, comedy, documentary — all genres welcome.</p>
     </div>
-    <div class="bg-white rounded-2xl p-8 shadow-lg text-center border-t-4 border-red-500 hover:-translate-y-2 transition duration-300">
-      <div class="text-red-500 mb-4 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></div>
+    <div class="bg-white rounded-2xl p-8 shadow-lg text-center border-t-4 border-rosa-500 hover:-translate-y-2 transition duration-300">
+      <div class="text-rosa-500 mb-4 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.069A1 1 0 0121 8.82v6.36a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg></div>
       <h3 class="text-xl font-bold mb-2">Short Films</h3>
       <p class="text-gray-600 text-sm">Mexican short films under 40 min. Fiction, documentary, animation, and experimental formats.</p>
     </div>
@@ -102,8 +123,8 @@
       <h3 class="text-xl font-bold mb-2">Photography</h3>
       <p class="text-gray-600 text-sm">Photo series or individual works by Mexican photographers. Exhibited daily during the festival.</p>
     </div>
-    <div class="bg-white rounded-2xl p-8 shadow-lg text-center border-t-4 border-red-500 hover:-translate-y-2 transition duration-300">
-      <div class="text-red-500 mb-4 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
+    <div class="bg-white rounded-2xl p-8 shadow-lg text-center border-t-4 border-rosa-500 hover:-translate-y-2 transition duration-300">
+      <div class="text-rosa-500 mb-4 flex justify-center"><svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg></div>
       <h3 class="text-xl font-bold mb-2">Visual Arts</h3>
       <p class="text-gray-600 text-sm">Paintings, illustrations, and mixed media by Mexican visual artists for the daily exhibition space.</p>
     </div>
@@ -120,8 +141,8 @@
   <!-- Fees -->
   <div class="grid md:grid-cols-3 gap-8 mb-12">
     <!-- Short Film -->
-    <div class="bg-white rounded-xl p-6 shadow-lg border-t-4 border-red-500">
-      <h3 class="text-lg font-bold mb-4 text-red-700">Short Film</h3>
+    <div class="bg-white rounded-xl p-6 shadow-lg border-t-4 border-rosa-500">
+      <h3 class="text-lg font-bold mb-4 text-rosa-700">Short Film</h3>
       <table class="w-full text-sm">
         <thead>
           <tr class="border-b-2 border-gray-200">
@@ -231,7 +252,7 @@
   <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
     <div><h3 class="font-black text-2xl mb-4 border-b-2 border-green-500 inline-block">Stories From Mexico</h3><p class="text-gray-400 leading-relaxed">Celebrating Mexican cinema &amp; culture in Dublin.</p></div>
     <div><h3 class="font-bold mb-4 uppercase tracking-widest text-green-500">Quick Links</h3><div class="space-y-2 text-gray-400"><p><a href="submissions.html" class="hover:text-white transition">Submit a Film</a></p><p><a href="volunteers.html" class="hover:text-white transition">Volunteer</a></p><p><a href="sponsors.html" class="hover:text-white transition">Become a Sponsor</a></p></div></div>
-    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Follow Us</h3><div class="space-y-2 text-gray-400"><p><a href="https://www.facebook.com/StoriesFromMexico" target="_blank" class="hover:text-white">Facebook</a></p></div><p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p></div>
+    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-rosa-500">Follow Us</h3><div class="space-y-2 text-gray-400"><p><a href="https://www.facebook.com/StoriesFromMexico" target="_blank" class="hover:text-white">Facebook</a></p></div><p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p></div>
   </div>
   <div class="text-center mt-12 border-t border-gray-800 pt-8 text-gray-600 text-sm"><p>&copy; 2026 Stories From Mexico | Light House Cinema, Dublin</p></div>
 </footer>

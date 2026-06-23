@@ -5,6 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Who We Are – Stories From México</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        rosa: {
+          50: "#fef2f9",
+          100: "#fce4f0",
+          200: "#f9c9e1",
+          300: "#f59cc8",
+          400: "#f06dab",
+          500: "#e91e8c",
+          600: "#d4006c",
+          700: "#a80055",
+          800: "#831843"
+        }
+      }
+    }
+  }
+}
+</script>
 <style>
   .page-header {
     height: 45vh;
@@ -41,7 +62,7 @@
             <button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100 text-left">Support SFM <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></button>
             <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
               <a href="volunteers.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Volunteers</a>
-              <a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-red-600">Donations</a>
+              <a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-rosa-600">Donations</a>
             </div>
           </div>
         </div>
@@ -85,7 +106,7 @@
             <button onclick="toggleElement('mob-support')" class="flex justify-between w-full text-gray-700 font-semibold">Support SFM <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg></button>
             <div id="mob-support" class="hidden pl-4 mt-2 space-y-2 flex flex-col">
               <a href="volunteers.html" class="text-green-600">Volunteers</a>
-              <a href="donations.html" class="text-red-600">Donations</a>
+              <a href="donations.html" class="text-rosa-600">Donations</a>
             </div>
           </div>
         </div>
@@ -128,7 +149,7 @@
 <section class="py-20 px-6 max-w-7xl mx-auto">
   <div class="grid lg:grid-cols-2 gap-16 items-center">
     <div>
-      <span class="text-red-600 font-bold uppercase tracking-widest text-sm">About Us</span>
+      <span class="text-rosa-600 font-bold uppercase tracking-widest text-sm">About Us</span>
       <h2 class="text-4xl md:text-5xl font-extrabold mt-2 mb-8 text-gray-900 border-l-8 border-green-600 pl-4">Who We Are</h2>
       <p class="text-lg text-gray-700 mb-6 leading-relaxed">
         <strong>Stories from México</strong> is a Mexican Cinema & Culture Week held in Dublin, Ireland — a festival designed to be the bridge connecting two nations through the power of storytelling, cinema, and art.
@@ -139,8 +160,8 @@
       <p class="text-lg text-gray-700 mb-8 leading-relaxed">
         In Dublin, the Latin American and Spanish-speaking community surpassed 55,000 residents in 2025 — approximately 7% of whom are Mexican. Despite the growing presence of both communities, Mexican productions have had limited reach in Ireland due to distribution challenges. <strong>Stories from México</strong> was born to change that.
       </p>
-      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-red-600 shadow-md">
-        <h4 class="font-black text-xl text-red-600 mb-3 uppercase tracking-wider">Our Objective</h4>
+      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-rosa-600 shadow-md">
+        <h4 class="font-black text-xl text-rosa-600 mb-3 uppercase tracking-wider">Our Objective</h4>
         <p class="text-gray-800 font-medium leading-relaxed">
           To promote the cultural richness and diversity of Mexico in Ireland through cinema and other artistic expressions, strengthening the cultural ties between both countries within the framework of Mexican Independence celebrations.
         </p>
@@ -171,8 +192,8 @@
         <h3 class="text-xl font-bold mb-3">Cultural Bridge</h3>
         <p class="text-gray-600">We connect Mexico and Ireland through shared stories, traditions, and artistic expressions that transcend language and borders.</p>
       </div>
-      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-red-500 shadow-md hover:-translate-y-2 transition duration-300">
-        <div class="text-red-500 mb-4">
+      <div class="bg-gray-50 p-8 rounded-xl border-t-4 border-rosa-500 shadow-md hover:-translate-y-2 transition duration-300">
+        <div class="text-rosa-500 mb-4">
           <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
         </div>
         <h3 class="text-xl font-bold mb-3">Community First</h3>
@@ -206,7 +227,7 @@
       </div>
     </div>
     <div>
-      <h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Follow Us</h3>
+      <h3 class="font-bold mb-4 uppercase tracking-widest text-rosa-500">Follow Us</h3>
       <div class="space-y-2 text-gray-400"><p><a href="https://www.facebook.com/StoriesFromMexico" target="_blank" class="hover:text-white">Facebook</a></p></div>
       <p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p>
     </div>

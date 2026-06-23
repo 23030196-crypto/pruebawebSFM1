@@ -4,6 +4,27 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Exhibitions – Stories From México</title>
 <script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        rosa: {
+          50: "#fef2f9",
+          100: "#fce4f0",
+          200: "#f9c9e1",
+          300: "#f59cc8",
+          400: "#f06dab",
+          500: "#e91e8c",
+          600: "#d4006c",
+          700: "#a80055",
+          800: "#831843"
+        }
+      }
+    }
+  }
+}
+</script>
 <style>.page-header{height:45vh;background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1577083552431-6e5fd01988a5?auto=format&fit=crop&w=1400&q=80');background-size:cover;background-position:center;}</style>
 </head>
 <body class="bg-gray-100">
@@ -17,7 +38,7 @@
           <a href="who-we-are.html" class="block px-4 py-2 hover:bg-gray-100">Who We Are</a><a href="our-impact.html" class="block px-4 py-2 hover:bg-gray-100">Our Impact</a>
           <div class="relative group/sub"><button class="flex justify-between items-center w-full px-4 py-2 hover:bg-gray-100">Support SFM <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"></path></svg></button>
             <div class="absolute left-full top-0 hidden group-hover/sub:block bg-white border py-2 w-40 shadow-xl rounded-lg">
-              <a href="volunteers.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Volunteers</a><a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-red-600">Donations</a>
+              <a href="volunteers.html" class="block px-4 py-2 hover:bg-gray-100 text-green-600">Volunteers</a><a href="donations.html" class="block px-4 py-2 hover:bg-gray-100 text-rosa-600">Donations</a>
             </div>
           </div>
         </div>
@@ -84,7 +105,7 @@
   <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-12 px-6">
     <div><h3 class="font-black text-2xl mb-4 border-b-2 border-green-500 inline-block">Stories From Mexico</h3><p class="text-gray-400">Celebrating Mexican cinema &amp; culture in Dublin.</p></div>
     <div><h3 class="font-bold mb-4 uppercase tracking-widest text-green-500">Quick Links</h3><div class="space-y-2 text-gray-400"><p><a href="submissions.html" class="hover:text-white">Submit a Film</a></p><p><a href="volunteers.html" class="hover:text-white">Volunteer</a></p><p><a href="sponsors.html" class="hover:text-white">Become a Sponsor</a></p></div></div>
-    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-red-500">Follow Us</h3><div class="space-y-2 text-gray-400"><p><a href="https://www.facebook.com/StoriesFromMexico" target="_blank" class="hover:text-white">Facebook</a></p></div><p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p></div>
+    <div><h3 class="font-bold mb-4 uppercase tracking-widest text-rosa-500">Follow Us</h3><div class="space-y-2 text-gray-400"><p><a href="https://www.facebook.com/StoriesFromMexico" target="_blank" class="hover:text-white">Facebook</a></p></div><p class="text-gray-500 text-sm mt-4">storiesfrommexicoie@gmail.com</p></div>
   </div>
   <div class="text-center mt-12 border-t border-gray-800 pt-8 text-gray-600 text-sm"><p>&copy; 2026 Stories From Mexico | Light House Cinema, Dublin</p></div>
 </footer>
